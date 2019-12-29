@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后什么，性能有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
+  <meta name="description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
 <meta name="keywords" content="Jmeter,测试,dubbo,优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jmeter自定义Java默认请求">
 <meta property="og:url" content="http:&#x2F;&#x2F;learninghard.top&#x2F;2019&#x2F;12&#x2F;29&#x2F;Jmeter%E8%87%AA%E5%AE%9A%E4%B9%89Java%E9%BB%98%E8%AE%A4%E8%AF%B7%E6%B1%82&#x2F;index.html">
 <meta property="og:site_name" content="Learning Hard">
-<meta property="og:description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后什么，性能有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
+<meta property="og:description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
 <meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FiYJgjG6NOEGZ_uxmVchzQsG_J_b">
 <meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FlGIXhC7qUSWoHotRhi5s86MpBTz">
 <meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;Fk_sqaEZqef_FZjFDx7CBPYxRaQH">
-<meta property="og:updated_time" content="2019-12-29T16:37:42.776Z">
+<meta property="og:updated_time" content="2019-12-29T16:40:19.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
 
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-30 00:37:42" itemprop="dateModified" datetime="2019-12-30T00:37:42+08:00">2019-12-30</time>
+                <time title="修改时间：2019-12-30 00:40:19" itemprop="dateModified" datetime="2019-12-30T00:40:19+08:00">2019-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
   </span>
   
   
-            <div class="post-description">项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后什么，性能有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了</div>
+            <div class="post-description">项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了</div>
 
         </div>
       </header>
@@ -287,7 +287,7 @@
 
       
         <h1 id="Jmeter-自定义Java默认请求"><a href="#Jmeter-自定义Java默认请求" class="headerlink" title="Jmeter 自定义Java默认请求"></a>Jmeter 自定义Java默认请求</h1><blockquote>
-<p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后什么，性能有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
+<p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
 </blockquote>
 <p>==版本：Jmeter5.2.1 ==</p>
 <h2 id="Jmeter压测dubbo接口"><a href="#Jmeter压测dubbo接口" class="headerlink" title="Jmeter压测dubbo接口"></a>Jmeter压测dubbo接口</h2><h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
