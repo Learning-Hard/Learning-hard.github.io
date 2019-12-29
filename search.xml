@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Jmeter自定义Java默认请求</title>
-    <url>/2019/12/29/Jmeter%E8%87%AA%E5%AE%9A%E4%B9%89Java%E9%BB%98%E8%AE%A4%E8%AF%B7%E6%B1%82/</url>
-    <content><![CDATA[<h1 id="Jmeter-自定义Java默认请求"><a href="#Jmeter-自定义Java默认请求" class="headerlink" title="Jmeter 自定义Java默认请求"></a>Jmeter 自定义Java默认请求</h1><blockquote>
+    <title>Jmeter测试Dubbo接口</title>
+    <url>/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><blockquote>
 <p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
 </blockquote>
 <p>==版本：Jmeter5.2.1 ==</p>
