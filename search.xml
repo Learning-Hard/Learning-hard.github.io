@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Jmeter自定义Java默认请求</title>
+    <url>/2019/12/29/Jmeter%E8%87%AA%E5%AE%9A%E4%B9%89Java%E9%BB%98%E8%AE%A4%E8%AF%B7%E6%B1%82/</url>
+    <content><![CDATA[<h1 id="Jmeter-自定义Java默认请求"><a href="#Jmeter-自定义Java默认请求" class="headerlink" title="Jmeter 自定义Java默认请求"></a>Jmeter 自定义Java默认请求</h1><blockquote>
+<p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后什么，性能有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
+</blockquote>
+<p>==版本：Jmeter5.2.1 ==</p>
+<h2 id="Jmeter压测dubbo接口"><a href="#Jmeter压测dubbo接口" class="headerlink" title="Jmeter压测dubbo接口"></a>Jmeter压测dubbo接口</h2><h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
+<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FolR3o3f4dsbPjrvNhCDp-rgDxXF" alt="微信截图_20191229234159.png"></p>
+<p>然后启动jmeter，就可以看到，然后按照这个这个顺序点就好了。</p>
+<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FiYJgjG6NOEGZ_uxmVchzQsG_J_b" alt="1.png"></p>
+<p>因为是测试dubbo接口，按照下图的顺序吧相关的dubbo配置信息填上，然后点击第三步的获取提供的接口列表，然后可以看到，dubbo接口提供的服务了，只需要选中对应的接口，传入对应的参数就可以对接口进行测试了。</p>
+<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FlGIXhC7qUSWoHotRhi5s86MpBTz" alt="3.png"></p>
+<p>一般来说是没什么问题了的，但是吧…我遇到了下面的问题</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">io.netty.handler.codec.EncoderException: java.lang.NoClassDefFoundError: com&#x2F;esotericsoftware&#x2F;kryo&#x2F;io&#x2F;Output</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:125)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:738)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite(AbstractChannelHandlerContext.java:730)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:816)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:723)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.handler.timeout.IdleStateHandler.write(IdleStateHandler.java:304)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:738)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite(AbstractChannelHandlerContext.java:730)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:816)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:723)</span></pre></td></tr><tr><td class="code"><pre><span class="line">	at io.netty.channel.ChannelDuplexHandler.write(ChannelDuplexHandler.java:106)</span></pre></td></tr></table></figure>
+<p><img src="http://q2lg9uq1p.bkt.clouddn.com/Fk_sqaEZqef_FZjFDx7CBPYxRaQH" alt="4.png"></p>
+<p><a href="https://segmentfault.com/a/1190000018877749" target="_blank" rel="noopener">dubbo报错：一个NoClassDefFoundError：factories/SerializerFactory问题解决</a></p>
+<p>看了这篇文章，就觉得是dubbo版本的问题了，因为我项目的dubbo版本是2.8.4,而这个插件开发用的dubbo版本是2.7.4，不得已改用了第二种方法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dubbo 2.8.4 是由当当维护的一个分支，dubbox，应为之前阿里有段时间没有更进dubbo项目</span></pre></td></tr><tr><td class="code"><pre><span class="line">dubbo 2.7.4 是2017年阿里重启dubbo项目之后到目前为值，更新的最新的版本</span></pre></td></tr></table></figure>
+
+<h3 id="方案二-编写java方法"><a href="#方案二-编写java方法" class="headerlink" title="方案二: 编写java方法"></a>方案二: 编写java方法</h3>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>Jmeter</tag>
+        <tag>测试</tag>
+        <tag>dubbo</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>maven配置 阿里</title>
     <url>/2019/12/13/maven-%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h1><p>maven 仓库镜像地址换成阿里镜像地址提高下载速度</p>
