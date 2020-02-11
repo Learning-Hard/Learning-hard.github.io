@@ -15,52 +15,28 @@
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('http://learninghard.top').hostname,
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.6.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","Available values":"valine","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"找到约${hits}条结果（用时${time}ms）"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"learninghard.top","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"找到约${hits}条结果（用时${time}ms）"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
-<meta name="keywords" content="Jmeter,测试,dubbo,优化">
+<meta name="keywords" content="标签">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jmeter测试Dubbo接口">
 <meta property="og:url" content="http:&#x2F;&#x2F;learninghard.top&#x2F;2019&#x2F;12&#x2F;29&#x2F;Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3&#x2F;index.html">
 <meta property="og:site_name" content="Learning Hard">
 <meta property="og:description" content="项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天... 唉，我太菜了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FiYJgjG6NOEGZ_uxmVchzQsG_J_b">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FlGIXhC7qUSWoHotRhi5s86MpBTz">
-<meta property="og:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;Fk_sqaEZqef_FZjFDx7CBPYxRaQH">
-<meta property="og:updated_time" content="2019-12-29T16:42:52.285Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FiYJgjG6NOEGZ_uxmVchzQsG_J_b">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FlGIXhC7qUSWoHotRhi5s86MpBTz">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fk_sqaEZqef_FZjFDx7CBPYxRaQH">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fg7erPgFaN5UtrnC0-tXgoFMkZ7q">
+<meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FvAsZip9IQqeEBF-egoRngJxgqeM">
+<meta property="og:updated_time" content="2020-02-11T04:43:57.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q2lg9uq1p.bkt.clouddn.com&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
 
 <link rel="canonical" href="http://learninghard.top/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/">
 
@@ -172,9 +148,9 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
            placeholder="搜索..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -239,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-30 00:42:52" itemprop="dateModified" datetime="2019-12-30T00:42:52+08:00">2019-12-30</time>
+                <time title="修改时间：2020-02-11 12:43:57" itemprop="dateModified" datetime="2020-02-11T12:43:57+08:00">2020-02-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,8 +223,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/%E5%88%86%E7%B1%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">分类</span>
                   </a>
                 </span>
             </span>
@@ -269,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/#comments" itemprop="discussionUrl">
+    <a title="valine" href="/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -289,21 +265,23 @@
         <h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><blockquote>
 <p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
 </blockquote>
-<p>==版本：Jmeter5.2.1 ==</p>
+<p>==版本：Jmeter5.2.1==</p>
 <h2 id="Jmeter压测dubbo接口"><a href="#Jmeter压测dubbo接口" class="headerlink" title="Jmeter压测dubbo接口"></a>Jmeter压测dubbo接口</h2><h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
-<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FolR3o3f4dsbPjrvNhCDp-rgDxXF" alt="微信截图_20191229234159.png"></p>
+<p><img src="http://oss.learninghard.top/FolR3o3f4dsbPjrvNhCDp-rgDxXF" alt="0.png"></p>
 <p>然后启动jmeter，就可以看到，然后按照这个这个顺序点就好了。</p>
-<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FiYJgjG6NOEGZ_uxmVchzQsG_J_b" alt="1.png"></p>
+<p><img src="http://oss.learninghard.top/FiYJgjG6NOEGZ_uxmVchzQsG_J_b" alt="1.png"></p>
 <p>因为是测试dubbo接口，按照下图的顺序吧相关的dubbo配置信息填上，然后点击第三步的获取提供的接口列表，然后可以看到，dubbo接口提供的服务了，只需要选中对应的接口，传入对应的参数就可以对接口进行测试了。</p>
-<p><img src="http://q2lg9uq1p.bkt.clouddn.com/FlGIXhC7qUSWoHotRhi5s86MpBTz" alt="3.png"></p>
+<p><img src="http://oss.learninghard.top/FlGIXhC7qUSWoHotRhi5s86MpBTz" alt="3.png"></p>
 <p>一般来说是没什么问题了的，但是吧…我遇到了下面的问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">io.netty.handler.codec.EncoderException: java.lang.NoClassDefFoundError: com&#x2F;esotericsoftware&#x2F;kryo&#x2F;io&#x2F;Output</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:125)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:738)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite(AbstractChannelHandlerContext.java:730)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:816)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:723)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	at io.netty.handler.timeout.IdleStateHandler.write(IdleStateHandler.java:304)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:738)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite(AbstractChannelHandlerContext.java:730)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:816)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:723)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	at io.netty.channel.ChannelDuplexHandler.write(ChannelDuplexHandler.java:106)</span></pre></td></tr></table></figure>
-<p><img src="http://q2lg9uq1p.bkt.clouddn.com/Fk_sqaEZqef_FZjFDx7CBPYxRaQH" alt="4.png"></p>
+<p><img src="http://oss.learninghard.top/Fk_sqaEZqef_FZjFDx7CBPYxRaQH" alt="4.png"></p>
 <p><a href="https://segmentfault.com/a/1190000018877749" target="_blank" rel="noopener">dubbo报错：一个NoClassDefFoundError：factories/SerializerFactory问题解决</a></p>
 <p>看了这篇文章，就觉得是dubbo版本的问题了，因为我项目的dubbo版本是2.8.4,而这个插件开发用的dubbo版本是2.7.4，不得已改用了第二种方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">dubbo 2.8.4 是由当当维护的一个分支，dubbox，应为之前阿里有段时间没有更进dubbo项目</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">dubbo 2.7.4 是2017年阿里重启dubbo项目之后到目前为值，更新的最新的版本</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">dubbo 2.8.4 是由当当维护的一个分支，dubbox，因为之前阿里有段时间没有更进dubbo项目</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">dubbo 2.7.4 是2017年阿里重启dubbo项目之后到目前为止，更新的最新的版本</span></pre></td></tr></table></figure>
 
-<h3 id="方案二-编写java方法"><a href="#方案二-编写java方法" class="headerlink" title="方案二: 编写java方法"></a>方案二: 编写java方法</h3>
+<h3 id="方案二-编写java方法"><a href="#方案二-编写java方法" class="headerlink" title="方案二: 编写java方法"></a>方案二: 编写java方法</h3><p>通过查看jmeter中的demo反编译一下<br><img src="http://oss.learninghard.top/Fg7erPgFaN5UtrnC0-tXgoFMkZ7q" alt="image.png"><br>可以看出我们要实现类似的功能也只需要继承<code>AbstractJavaSamplerClient</code>这个抽象类<br><img src="http://oss.learninghard.top/FvAsZip9IQqeEBF-egoRngJxgqeM" alt="5.png"></p>
+<p>具体操作如下</p>
+
     </div>
 
     
@@ -312,10 +290,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Jmeter/" rel="tag"># Jmeter</a>
-              <a href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
-              <a href="/tags/dubbo/" rel="tag"># dubbo</a>
-              <a href="/tags/%E4%BC%98%E5%8C%96/" rel="tag"># 优化</a>
+              <a href="/tags/%E6%A0%87%E7%AD%BE/" rel="tag"># 标签</a>
           </div>
 
         
@@ -411,13 +386,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -461,7 +436,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -470,7 +445,7 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
   </div>
 
         
@@ -548,20 +523,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: true,
-      notify: false,
-      appId: 'wrVEpNtAiCzqUCMvEJxnOUNE-gzGzoHsz',
-      appKey: 'uq6SUmFxoi127Ic57SyYSiYf',
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : false,
+      appId      : 'wrVEpNtAiCzqUCMvEJxnOUNE-gzGzoHsz',
+      appKey     : 'uq6SUmFxoi127Ic57SyYSiYf',
       placeholder: "说两句吧...",
-      avatar: 'mm',
-      meta: guest,
-      pageSize: '10' || 10,
-      visitor: false,
-      lang: 'zh-cn' || 'zh-cn',
-      path: location.pathname,
-      recordIP: true,
-      serverURLs: ''
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
     });
   }, window.Valine);
 });
