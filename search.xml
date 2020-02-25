@@ -18,8 +18,8 @@
 <h3 id="4、填写自己的oss相关配置【七牛OSS为例】"><a href="#4、填写自己的oss相关配置【七牛OSS为例】" class="headerlink" title="4、填写自己的oss相关配置【七牛OSS为例】"></a>4、填写自己的oss相关配置【七牛OSS为例】</h3><ul>
 <li>指定自己的上传的方式为七牛OSS<br><img src="http://oss.learninghard.top/Fqas7bbk8alUO1vsKeuTQMPCbO4N" alt="image.png"></li>
 <li>指定自己七牛OSS的配置<br><img src="http://oss.learninghard.top/FrdKY3p0P22P0rvCKPD-a2-AMiWT" alt="image.png"></li>
-<li>这个处理原作者写的还有问题，在圈住代码处加上<code>.replace(/\+/g, &quot;-&quot;).replace(/\//g, &quot;_&quot;)</code><br><img src="http://oss.learninghard.top/FjxfgmpmEJVQlM0RxYDp98lbde2p" alt="image.png"></li>
-<li>然后重启Typora，文件复制到typora就能成功上传到对应的OSS了</li>
+<li>这行代码处理原作者写的还有点问题，暂时在圈住代码处加上<code>.replace(/\+/g, &quot;-&quot;).replace(/\//g, &quot;_&quot;)</code><br><img src="http://oss.learninghard.top/FjxfgmpmEJVQlM0RxYDp98lbde2p" alt="image.png"></li>
+<li>然后重启Typora，文件复制到Typora就能愉快的上传到对应的OSS了</li>
 </ul>
 ]]></content>
       <categories>

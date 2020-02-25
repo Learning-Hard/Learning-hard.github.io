@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"learninghard.top","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"找到约${hits}条结果（用时${time}ms）"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="[object Object]">
+  <meta name="description" content="Windows版本Typora实现插入图片自动上传到oss，并更改图片地址本地为oss上的图片地址">
 <meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下Typora图片自动上传到OSS">
 <meta property="og:url" content="http:&#x2F;&#x2F;learninghard.top&#x2F;2020&#x2F;02&#x2F;25&#x2F;Windows%E4%B8%8BTypora%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0OSS&#x2F;index.html">
 <meta property="og:site_name" content="Learning Hard">
-<meta property="og:description" content="[object Object]">
+<meta property="og:description" content="Windows版本Typora实现插入图片自动上传到oss，并更改图片地址本地为oss上的图片地址">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fj6xSNiMoX3dtYao7srUAF5i_iSR">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FguaBWiNCDY39Xsj4ExIPtP0hHnb">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fqas7bbk8alUO1vsKeuTQMPCbO4N">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FrdKY3p0P22P0rvCKPD-a2-AMiWT">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FjxfgmpmEJVQlM0RxYDp98lbde2p">
-<meta property="og:updated_time" content="2020-02-25T03:57:00.695Z">
+<meta property="og:updated_time" content="2020-02-25T04:02:01.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fj6xSNiMoX3dtYao7srUAF5i_iSR">
 
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-25 11:19:52 / 修改时间：11:57:00" itemprop="dateCreated datePublished" datetime="2020-02-25T11:19:52+08:00">2020-02-25</time>
+              <time title="创建时间：2020-02-25 11:19:52 / 修改时间：12:02:01" itemprop="dateCreated datePublished" datetime="2020-02-25T11:19:52+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
   </span>
   
   
-            <div class="post-description">[object Object]</div>
+            <div class="post-description">Windows版本Typora实现插入图片自动上传到oss，并更改图片地址本地为oss上的图片地址</div>
 
         </div>
       </header>
@@ -272,8 +272,8 @@
 <h3 id="4、填写自己的oss相关配置【七牛OSS为例】"><a href="#4、填写自己的oss相关配置【七牛OSS为例】" class="headerlink" title="4、填写自己的oss相关配置【七牛OSS为例】"></a>4、填写自己的oss相关配置【七牛OSS为例】</h3><ul>
 <li>指定自己的上传的方式为七牛OSS<br><img src="http://oss.learninghard.top/Fqas7bbk8alUO1vsKeuTQMPCbO4N" alt="image.png"></li>
 <li>指定自己七牛OSS的配置<br><img src="http://oss.learninghard.top/FrdKY3p0P22P0rvCKPD-a2-AMiWT" alt="image.png"></li>
-<li>这个处理原作者写的还有问题，在圈住代码处加上<code>.replace(/\+/g, &quot;-&quot;).replace(/\//g, &quot;_&quot;)</code><br><img src="http://oss.learninghard.top/FjxfgmpmEJVQlM0RxYDp98lbde2p" alt="image.png"></li>
-<li>然后重启Typora，文件复制到typora就能成功上传到对应的OSS了</li>
+<li>这行代码处理原作者写的还有点问题，暂时在圈住代码处加上<code>.replace(/\+/g, &quot;-&quot;).replace(/\//g, &quot;_&quot;)</code><br><img src="http://oss.learninghard.top/FjxfgmpmEJVQlM0RxYDp98lbde2p" alt="image.png"></li>
+<li>然后重启Typora，文件复制到Typora就能愉快的上传到对应的OSS了</li>
 </ul>
 
     </div>
@@ -436,11 +436,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Learning Hard</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
-  </div>
 
         
 <div class="busuanzi-count">
