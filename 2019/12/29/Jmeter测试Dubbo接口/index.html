@@ -34,7 +34,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fk_sqaEZqef_FZjFDx7CBPYxRaQH">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;Fg7erPgFaN5UtrnC0-tXgoFMkZ7q">
 <meta property="og:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FvAsZip9IQqeEBF-egoRngJxgqeM">
-<meta property="og:updated_time" content="2020-02-11T04:43:57.747Z">
+<meta property="og:updated_time" content="2020-02-25T03:10:16.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;oss.learninghard.top&#x2F;FolR3o3f4dsbPjrvNhCDp-rgDxXF">
 
@@ -89,6 +89,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -101,13 +109,7 @@
         <p class="site-subtitle">Cover66</p>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
+  <div class="site-nav-right"></div>
 </div>
 
 
@@ -215,7 +217,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-11 12:43:57" itemprop="dateModified" datetime="2020-02-11T12:43:57+08:00">2020-02-11</time>
+                <time title="修改时间：2020-02-25 11:10:16" itemprop="dateModified" datetime="2020-02-25T11:10:16+08:00">2020-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,8 +225,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">分类</span>
+                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
                   </a>
                 </span>
             </span>
@@ -262,11 +264,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><blockquote>
-<p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
-</blockquote>
-<p>==版本：Jmeter5.2.1==</p>
-<h2 id="Jmeter压测dubbo接口"><a href="#Jmeter压测dubbo接口" class="headerlink" title="Jmeter压测dubbo接口"></a>Jmeter压测dubbo接口</h2><h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
+        <h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><p>版本：Jmeter5.2.1</p>
+<p>##Jmeter压测dubbo接口</p>
+<h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
 <p><img src="http://oss.learninghard.top/FolR3o3f4dsbPjrvNhCDp-rgDxXF" alt="0.png"></p>
 <p>然后启动jmeter，就可以看到，然后按照这个这个顺序点就好了。</p>
 <p><img src="http://oss.learninghard.top/FiYJgjG6NOEGZ_uxmVchzQsG_J_b" alt="1.png"></p>
@@ -302,7 +302,10 @@
     <a href="/2019/12/13/maven-%E9%85%8D%E7%BD%AE/" rel="prev" title="maven配置 阿里">
       <i class="fa fa-chevron-left"></i> maven配置 阿里
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/25/Windows%E4%B8%8BTypora%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0OSS/" rel="next" title="Windows下Typora图片自动上传到OSS">
+      Windows下Typora图片自动上传到OSS <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -363,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jmeter测试Dubbo接口"><span class="nav-number">1.</span> <span class="nav-text">Jmeter测试Dubbo接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jmeter压测dubbo接口"><span class="nav-number">1.1.</span> <span class="nav-text">Jmeter压测dubbo接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一-jmeter插件"><span class="nav-number">1.1.1.</span> <span class="nav-text">方案一: jmeter插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二-编写java方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">方案二: 编写java方法</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jmeter测试Dubbo接口"><span class="nav-number">1.</span> <span class="nav-text">Jmeter测试Dubbo接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一-jmeter插件"><span class="nav-number">1.0.1.</span> <span class="nav-text">方案一: jmeter插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二-编写java方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">方案二: 编写java方法</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -379,20 +382,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Windows下Typora图片自动上传到OSS</title>
+    <url>/2020/02/25/Windows%E4%B8%8BTypora%E5%9B%BE%E7%89%87%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0OSS/</url>
+    <content><![CDATA[<p>因为本人使用的是七牛的OSS，这里只针对七牛OSS的配置做下说明，其他配置请参考原作者的说明 <a href="https://github.com/Thobian/typora-plugins-win-img" target="_blank" rel="noopener">https://github.com/Thobian/typora-plugins-win-img</a></p>
+<blockquote>
+<p>软件版本</p>
+</blockquote>
+<p><img src="http://oss.learninghard.top/Fj6xSNiMoX3dtYao7srUAF5i_iSR" alt="1"></p>
+<h3 id="1、安装Typora，自己记住安装目录"><a href="#1、安装Typora，自己记住安装目录" class="headerlink" title="1、安装Typora，自己记住安装目录"></a>1、安装Typora，自己记住安装目录</h3><h3 id="2、下载插件代码-typora-plugins-win-img"><a href="#2、下载插件代码-typora-plugins-win-img" class="headerlink" title="2、下载插件代码 typora-plugins-win-img"></a>2、下载插件代码 <a href="https://github.com/Thobian/typora-plugins-win-img" target="_blank" rel="noopener">typora-plugins-win-img</a></h3><p><img src="http://oss.learninghard.top/FguaBWiNCDY39Xsj4ExIPtP0hHnb" alt="image.png"><br>解压后只需要我圈住的文件，复制到<code>[Typora安装目录]\resources\app\</code>目录下</p>
+<h3 id="3、将-Typora安装目录-resources-app-window-html添加一行代码"><a href="#3、将-Typora安装目录-resources-app-window-html添加一行代码" class="headerlink" title="3、将[Typora安装目录]\resources\app\window.html添加一行代码"></a>3、将[Typora安装目录]\resources\app\window.html添加一行代码</h3><ul>
+<li>不放心可以先将window.html备份一下</li>
+<li>然后记事本打开window.html</li>
+<li>搜索 <code>&lt;script src=&quot;./app/window/frame.js&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;</code> </li>
+<li>在其后面加上一行<code>&lt;script src=&quot;./plugins/image/upload.js&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="4、填写自己的oss相关配置【七牛OSS为例】"><a href="#4、填写自己的oss相关配置【七牛OSS为例】" class="headerlink" title="4、填写自己的oss相关配置【七牛OSS为例】"></a>4、填写自己的oss相关配置【七牛OSS为例】</h3><ul>
+<li>指定自己的上传的方式为七牛OSS<br><img src="http://oss.learninghard.top/Fqas7bbk8alUO1vsKeuTQMPCbO4N" alt="image.png"></li>
+<li>指定自己七牛OSS的配置<br><img src="http://oss.learninghard.top/FrdKY3p0P22P0rvCKPD-a2-AMiWT" alt="image.png"></li>
+<li>这个处理原作者写的还有问题，在圈住代码处加上<code>.replace(/\+/g, &quot;-&quot;).replace(/\//g, &quot;_&quot;)</code><br><img src="http://oss.learninghard.top/FjxfgmpmEJVQlM0RxYDp98lbde2p" alt="image.png"></li>
+<li>然后重启Typora，文件复制到typora就能成功上传到对应的OSS了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂文</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jmeter测试Dubbo接口</title>
     <url>/2019/12/29/Jmeter%E6%B5%8B%E8%AF%95Dubbo%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><blockquote>
-<p>背景：项目中余额查询接口，压测过程中发现接口的速度越来与越慢，因为没给权限访问压测环境，然后就懵了，不知道怎么弄。最后：便才用Jmeter自己本地压测，看看改了之后，性能究竟有没有提升。结果吧，就这破玩意儿，搞了整整一天… 唉，我太菜了</p>
-</blockquote>
-<p>==版本：Jmeter5.2.1==</p>
-<h2 id="Jmeter压测dubbo接口"><a href="#Jmeter压测dubbo接口" class="headerlink" title="Jmeter压测dubbo接口"></a>Jmeter压测dubbo接口</h2><h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
+    <content><![CDATA[<h1 id="Jmeter测试Dubbo接口"><a href="#Jmeter测试Dubbo接口" class="headerlink" title="Jmeter测试Dubbo接口"></a>Jmeter测试Dubbo接口</h1><p>版本：Jmeter5.2.1</p>
+<p>##Jmeter压测dubbo接口</p>
+<h3 id="方案一-jmeter插件"><a href="#方案一-jmeter插件" class="headerlink" title="方案一: jmeter插件"></a>方案一: jmeter插件</h3><p>网上有一个比较好用的Jmeter插件<code>jmeter-plugins-dubbo</code>，直接放到<code>jmeter目录/lib/ext</code> 目录下就可以了</p>
 <p><img src="http://oss.learninghard.top/FolR3o3f4dsbPjrvNhCDp-rgDxXF" alt="0.png"></p>
 <p>然后启动jmeter，就可以看到，然后按照这个这个顺序点就好了。</p>
 <p><img src="http://oss.learninghard.top/FiYJgjG6NOEGZ_uxmVchzQsG_J_b" alt="1.png"></p>
@@ -24,7 +51,7 @@
 <p>具体操作如下</p>
 ]]></content>
       <categories>
-        <category>分类</category>
+        <category>测试</category>
       </categories>
       <tags>
         <tag>标签</tag>
